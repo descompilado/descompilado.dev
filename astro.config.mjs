@@ -1,11 +1,12 @@
-import { defineConfig, envField, passthroughImageService } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
 import react from '@astrojs/react';
-import vercel from '@astrojs/vercel';
 
 import sitemap from "@astrojs/sitemap";
+
+import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   site: 'https://descompilado.dev/',
@@ -15,14 +16,17 @@ export default defineConfig({
       RESEND_AUDIENCE_ID: envField.string({ context: "server", access: "public" })
     }
   },
-  vite: {
-    plugins: [tailwindcss()]
-  },
   integrations: [
     react(),
     sitemap()
   ],
-  adapter: vercel({
-    imageService: true
-  }),
+  adapter: cloudflare(),
+  vite: {
+    plugins: [tailwindcss()],
+    resolve: {
+      alias: import.meta.env.PROD && {
+        "react-dom/server": "react-dom/server.edge",
+      },
+    },
+  },
 });
