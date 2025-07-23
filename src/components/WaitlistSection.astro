@@ -1,0 +1,28 @@
+---
+import WaitlistForm from "./WaitlistForm";
+import WaitlistTitle from "./WaitlistTitle.astro";
+import WaitlistTitleFallback from "./WaitlistTitleFallback.astro";
+---
+
+<section id="waitlist" class="py-24 bg-gradient-hero">
+    <div class="container mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center">
+            <WaitlistTitle server:defer>
+                <Fragment slot="fallback">
+                    <WaitlistTitleFallback/>
+                </Fragment>
+            </WaitlistTitle>
+
+            <p class="text-xl text-muted-foreground mb-12 animate-slide-up">
+                Estamos finalizando os primeiros desafios. Inscreva-se para ser
+                o primeiro a saber do lançamento e garantir seu acesso.
+            </p>
+
+            <WaitlistForm client:idle />
+
+            <p class="text-sm text-muted-foreground mt-8">
+                Sem spam. Apenas atualizações importantes sobre o lançamento.
+            </p>
+        </div>
+    </div>
+</section>

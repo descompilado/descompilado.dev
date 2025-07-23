@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {
   Body,
   Container,
@@ -13,6 +12,7 @@ import {
   Tailwind,
   Button,
   Hr,
+  pixelBasedPreset
 } from '@react-email/components';
 
 const WelcomeWaitlist = () => {
@@ -20,14 +20,24 @@ const WelcomeWaitlist = () => {
     <Html lang="pt-BR" dir="ltr">
       <Head />
       <Preview>Obrigado por se juntar à lista de espera do Descompilado!</Preview>
-      <Tailwind>
-        <Body className="bg-[#1C1E26] font-sans py-[40px]">
-          <Container className="mx-auto px-[20px] max-w-[600px]">
-            <Section className="bg-[#252832] px-[32px] py-[40px]">
-              {/* Logo */}
-              <Section className="text-center mb-[32px]">
+      <Tailwind config={{
+        presets: [pixelBasedPreset],
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#16A249",
+                    background: "#030408",
+                    foreground: "#fafafa"
+                }
+            }
+        }
+      }}>
+        <Body className="bg-background font-sans py-10">
+          <Container className="mx-auto px-5 max-w-[600px]">
+            <Section className="bg-background px-8 py-10">
+              <Section className="text-center mb-8">
                 <Img
-                  src="https://www.descompilado.dev/favicon.svg"
+                  src="https://www.descompilado.dev/logo.svg"
                   width="48"
                   height="48"
                   alt="Descompilado"
@@ -35,69 +45,65 @@ const WelcomeWaitlist = () => {
                 />
               </Section>
 
-              {/* Main Content */}
               <Section>
-                <Heading className="text-[#FBFBFB] text-[28px] font-bold text-center mb-[24px] m-0">
+                <Heading className="text-foreground text-3xl font-bold text-center mb-6 m-0">
                   Bem-vindo ao Descompilado!
                 </Heading>
                 
-                <Text className="text-[#FBFBFB] text-[16px] leading-[24px] mb-[20px] m-0">
+                <Text className="text-foreground text-lg leading-6 mb-5">
                   Olá, Dev!
                 </Text>
 
-                <Text className="text-[#FBFBFB] text-[16px] leading-[24px] mb-[20px] m-0">
+                <Text className="text-foreground text-lg leading-6 mb-5">
                   Obrigado por se juntar à nossa lista de espera! Estamos empolgados em ter você conosco nesta jornada de aprendizado profundo em engenharia de software.
                 </Text>
 
-                <Text className="text-[#FBFBFB] text-[16px] leading-[24px] mb-[20px] m-0">
-                  No Descompilado, acreditamos que a melhor forma de aprender é <strong className="text-[#62D9A7]">construindo na prática</strong>. Em breve, você terá acesso a conteúdos exclusivos onde aprenderá a construir tecnologias fundamentais do zero, desenvolvendo uma compreensão sólida dos sistemas que usamos todos os dias.
+                <Text className="text-foreground text-lg leading-6 mb-5">
+                  No Descompilado, acreditamos que a melhor forma de aprender é <strong className="text-primary">construindo na prática</strong>. Em breve, você terá acesso a conteúdos exclusivos onde aprenderá a construir tecnologias fundamentais do zero, desenvolvendo uma compreensão sólida dos sistemas que usamos todos os dias.
                 </Text>
 
-                <Text className="text-[#FBFBFB] text-[16px] leading-[24px] mb-[32px] m-0">
-                  Fique atento ao seu e-mail - em breve enviaremos novidades sobre o lançamento da plataforma e conteúdos especiais para nossa comunidade.
+                <Text className="text-foreground text-lg leading-6 mb-8">
+                  Fique atento ao seu e-mail, em breve enviaremos novidades sobre o lançamento da plataforma e conteúdos especiais para nossa comunidade.
                 </Text>
 
-                {/* CTA Button */}
-                <Section className="text-center mb-[32px]">
+                <Section className="text-center mb-8">
                   <Button
                     href="https://www.descompilado.dev/"
-                    className="bg-[#62D9A7] text-[#1C1E26] font-semibold py-[12px] px-[24px] text-[16px]"
+                    className="bg-primary text-foreground font-semibold py-3 px-6 text-lg"
                   >
                     Visitar Descompilado
                   </Button>
                 </Section>
 
-                <Text className="text-[#FBFBFB] text-[16px] leading-[24px] mb-[0px] m-0">
+                <Text className="text-foreground text-lg leading-6 mb-0">
                   Obrigado mais uma vez por fazer parte desta comunidade!
                 </Text>
 
-                <Text className="text-[#FBFBFB] text-[16px] leading-[24px] mb-[0px] m-0">
+                <Text className="text-foreground text-lg leading-6 mb-0">
                   Equipe Descompilado
                 </Text>
               </Section>
 
-              {/* Divider */}
-              <Hr className="border-[#3A3D4A] border-solid my-[32px]" />
+              <Hr className="border-[#3A3D4A] border-solid my-8" />
 
-              {/* Footer */}
               <Section className="text-center">
-                <Text className="text-[#62D9A7] text-[14px] font-semibold mb-[8px] m-0">
+                <Text className="text-primary text-sm font-semibold mb-2">
                   Aprenda construindo na prática
                 </Text>
                 
-                <Text className="text-[#FBFBFB] text-[12px] mb-[8px] m-0">
-                  <Link href="https://www.descompilado.dev/" className="text-[#62D9A7]">
+                <Text className="text-foreground text-3 mb-2">
+                  <Link href="https://www.descompilado.dev/" className="text-primary">
                     www.descompilado.dev
                   </Link>
                 </Text>
 
-                <Text className="text-[#FBFBFB] text-[12px] mb-[8px] m-0">
-                  <Link href="#" className="text-[#62D9A7]">
+                {/* <Text className="text-foreground text-3 mb-2">
+                  <Link href="#" className="text-primary">
                     Cancelar inscrição
                   </Link>
-                </Text>
+                </Text> */}
 
-                <Text className="text-[#FBFBFB] text-[12px] m-0">
+                <Text className="text-foreground text-3">
                   © 2025 Descompilado. Todos os direitos reservados.
                 </Text>
               </Section>

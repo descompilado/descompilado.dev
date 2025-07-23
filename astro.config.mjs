@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 import tailwindcss from '@tailwindcss/vite';
 
-import vercel from "@astrojs/vercel";
+import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   site: 'https://descompilado.dev/',
@@ -26,6 +26,8 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
+  output: 'server',
+  
   adapter: vercel({
     imageService: true
   }),

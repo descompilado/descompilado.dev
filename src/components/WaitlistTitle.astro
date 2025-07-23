@@ -1,0 +1,27 @@
+---
+import { actions } from "astro:actions";
+import WaitlistTitleFallback from "./WaitlistTitleFallback.astro";
+
+Astro.response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate');
+Astro.response.headers.set('Vercel-CDN-Cache-Control', 'max-age=60');
+Astro.response.headers.set('CDN-Cache-Control', 'max-age=60');
+
+const { data: count = 0 } = await Astro.callAction(actions.waitlist.count, {});
+
+const show = count > 1;
+---
+
+{
+    show && (
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 animate-fade-in">
+            Mais de <span class="gradient-text">+{count}</span> ja estão
+            esperando e você ta esperando o quê?
+        </h2>
+    )
+}
+
+{
+    !show && (
+        <WaitlistTitleFallback/>
+    )
+}

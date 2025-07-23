@@ -1,5 +1,12 @@
 ---
-import { Puzzle, Terminal, Brain } from "lucide-react";
+import {
+    Puzzle,
+    Terminal,
+    Brain,
+    Server,
+    GitMerge,
+    Braces,
+} from "lucide-react";
 import GoToJoinWaitlist from "./GoToJoinWaitlist.astro";
 
 const steps = [
@@ -22,6 +29,27 @@ const steps = [
             "Compreenda profundamente como sistemas complexos funcionam por dentro.",
     },
 ];
+
+const challenges = [
+    {
+        icon: Server,
+        title: "Dns",
+        description:
+            'Descubra como a "lista telefônica da internet" funciona nos bastidores para conectar você aos servidores certos.',
+    },
+    {
+        icon: GitMerge,
+        title: "Git",
+        description:
+            "Implemente um sistema de versionamento e descubra os fundamentos por trás da arquitetura do Git",
+    },
+    {
+        icon: Braces,
+        title: "Json",
+        description:
+            "JSON.parse()... mas por baixo dos panos? Crie seu próprio parser e domine a estrutura de dados mais popular da web.",
+    },
+];
 ---
 
 <section id="como-funciona" class="py-24 bg-card/30">
@@ -30,7 +58,9 @@ const steps = [
             <h2
                 class="text-3xl md:text-5xl font-bold text-center mb-4 animate-fade-in"
             >
-                Sua Jornada para a <span class="gradient-text">Proficiência</span>
+                Sua Jornada para a <span class="gradient-text"
+                    >Proficiência</span
+                >
             </h2>
             <p
                 class="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto animate-slide-up"
@@ -52,7 +82,7 @@ const steps = [
                                     <div class="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent transform translate-x-8 z-0" />
                                 )}
 
-                                <div class="relative bg-card border border-border rounded-2xl p-8 text-center hover:shadow-card transition-all duration-300 group-hover:border-primary/50 z-10">
+                                <div class="relative h-full bg-card border border-border rounded-2xl p-8 text-center hover:shadow-card transition-all duration-300 group-hover:border-primary/50 z-10">
                                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                                         {index + 1}
                                     </div>
@@ -74,20 +104,51 @@ const steps = [
                 }
             </div>
 
-            <div class="text-center mt-16 space-y-8">
-                <div class="xm:hidden flex flex-col items-center">
-                    <GoToJoinWaitlist position="como-funciona"/>
-                </div>
-                <div
-                    class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3"
+            <div class="text-center mt-32 mb-16 space-y-8">
+                <h2
+                    class="text-3xl md:text-5xl font-bold text-center mb-4 animate-fade-in"
                 >
-                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"
-                    ></span>
-                    <span class="text-sm text-primary font-medium">
-                        Primeiros desafios chegando em breve
-                    </span>
-                </div>
+                    Primeiros desafios <span class="gradient-text"
+                        >chegando em breve...</span
+                    >
+                </h2>
             </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                {
+                    challenges.map((challenge, index) => {
+                        const Icon = challenge.icon;
+                        return (
+                            <div
+                                class="relative group animate-scale-in"
+                                style={{ animationDelay: `${index * 0.2}s` }}
+                            >
+                                {index < steps.length - 1 && (
+                                    <div class="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent transform translate-x-8 z-0" />
+                                )}
+
+                                <div class="relative h-full bg-card border border-border rounded-2xl p-8 text-center hover:shadow-card transition-all duration-300 group-hover:border-primary/50 z-10">
+                                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                                        <Icon className="w-8 h-8 text-primary" />
+                                    </div>
+
+                                    <h3 class="text-xl font-semibold mb-4">
+                                        {challenge.title}
+                                    </h3>
+                                    <p class="text-muted-foreground leading-relaxed">
+                                        {challenge.description}
+                                    </p>
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+            </div>
+
+            <div class="xm:hidden flex flex-col items-center mt-16">
+                <GoToJoinWaitlist position="como-funciona"/>
+            </div>
+
         </div>
     </div>
 </section>
