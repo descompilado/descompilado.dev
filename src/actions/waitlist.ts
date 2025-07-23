@@ -25,7 +25,7 @@ export const waitlist = {
 
                     throw new ActionError({
                         code: "INTERNAL_SERVER_ERROR",
-                        message: "Failed to add to wishlist",
+                        message: "Failed to add to waitlist",
                     });
                 }
             } catch (error) {

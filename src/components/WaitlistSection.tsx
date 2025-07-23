@@ -6,6 +6,8 @@ import { actions } from 'astro:actions';
 
 import { toast } from "sonner";
 
+import confetti from 'canvas-confetti';
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Check, Loader2, Mail } from "lucide-react";
@@ -53,6 +55,8 @@ export default function WishlistSection() {
             toast.success("Sucesso!", {
                 description: "Seu lugar está garantido. Em breve você receberá mais informações."
             })
+
+            confetti()
         }
 
         setIsLoading(false)
@@ -99,7 +103,7 @@ export default function WishlistSection() {
 
                     <form onSubmit={handleSubmit} className="space-y-6 animate-scale-in"
                         style={{ animationDelay: '0.3s' }}>
-                        <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                        <div className="flex flex-col gap-4 max-w-lg mx-auto">
                             <div className="relative flex-1">
                                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
                                 <Input

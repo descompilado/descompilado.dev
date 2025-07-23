@@ -1,5 +1,6 @@
 ---
 import { Puzzle, Terminal, Brain } from "lucide-react";
+import GoToJoinWaitlist from "./GoToJoinWaitlist.astro";
 
 const steps = [
     {
@@ -73,7 +74,10 @@ const steps = [
                 }
             </div>
 
-            <div class="text-center mt-16">
+            <div class="text-center mt-16 space-y-8">
+                <div class="xm:hidden flex flex-col items-center">
+                    <GoToJoinWaitlist position="como-funciona"/>
+                </div>
                 <div
                     class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3"
                 >

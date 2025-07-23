@@ -5,7 +5,10 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
+  site: 'https://descompilado.dev/',
   env: {
     schema: {
       RESEND_API_KEY: envField.string({ context: "server", access: "secret" }),
@@ -15,9 +18,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [react()],
-  adapter: vercel(),
-  image: {
-    service: passthroughImageService(),
-  },
+  integrations: [
+    react(),
+    sitemap()
+  ],
+  adapter: vercel({
+    imageService: true
+  }),
 });

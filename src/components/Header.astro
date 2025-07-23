@@ -4,7 +4,7 @@ import GoToJoinWaitlist from "./GoToJoinWaitlist.astro";
 ---
 
 <header
-    class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+    class="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md border-border"
 >
     <nav
         class="w-full max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between"
@@ -39,8 +39,8 @@ import GoToJoinWaitlist from "./GoToJoinWaitlist.astro";
             </a>
         </div>
 
-        <div class="hidden lg:flex">
-            <GoToJoinWaitlist />
+        <div class="hidden xm:flex">
+            <GoToJoinWaitlist position="header" size="sm" showIcon={false} />
         </div>
     </nav>
 </header>

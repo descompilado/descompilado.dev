@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import "../styles/global.css";
 ---
 
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +45,7 @@ import "../styles/global.css";
 	<body class="bg-background text-foreground font-sans">
 		<div>
 			<slot />
-			<Toaster client:load />
+			<Toaster client:idle />
 		</div>
 	</body>
 </html>
