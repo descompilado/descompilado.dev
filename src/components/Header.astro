@@ -1,6 +1,6 @@
 ---
-import { Code2 } from "lucide-react";
 import GoToJoinWaitlist from "./GoToJoinWaitlist.astro";
+import Logo from "./Logo.astro";
 
 interface Props {
     onlyLogo?: boolean;
@@ -20,7 +20,7 @@ const { onlyLogo } = Astro.props;
                 <div
                     class="w-8 h-8 bg-gradient-primary rounded-md flex items-center justify-center glow-effect"
                 >
-                    <Code2 className="w-5 h-5 text-white" />
+                    <Logo className="w-10 h-10 text-white" />
                 </div>
                 <span class="text-xl font-bold text-foreground"
                     >Descompilado</span
