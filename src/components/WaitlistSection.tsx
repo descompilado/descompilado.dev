@@ -25,9 +25,6 @@ export default function WishlistSection() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
 
-        console.log("Teste");
-
-
         if (!email.trim()) {
             toast.error("Email obrigatório", {
                 description: "Por favor, insira seu email para continuar.",
