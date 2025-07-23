@@ -20,6 +20,12 @@ importers:
       '@astrojs/vercel':
         specifier: ^8.2.3
         version: 8.2.3(astro@5.12.1(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.45.1)(typescript@5.8.3))(react@19.1.0)(rollup@4.45.1)
+      '@fontsource-variable/inter':
+        specifier: ^5.2.6
+        version: 5.2.6
+      '@fontsource-variable/jetbrains-mono':
+        specifier: ^5.2.6
+        version: 5.2.6
       '@radix-ui/react-accordion':
         specifier: ^1.2.11
         version: 1.2.11(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -372,6 +378,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/inter@5.2.6':
+    resolution: {integrity: sha512-jks/bficUPQ9nn7GvXvHtlQIPudW7Wx8CrlZoY8bhxgeobNxlQan8DclUJuYF2loYRrGpfrhCIZZspXYysiVGg==}
+
+  '@fontsource-variable/jetbrains-mono@5.2.6':
+    resolution: {integrity: sha512-1pvtyK6H1paBOixbtZ9xfQgArVQ4SJMW3WSGZPOd5PiW3yg0t8umwKnjDMzW2ofb7qSdiXnsnIaHPT36vEOdlg==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2868,6 +2880,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.8':
     optional: true
+
+  '@fontsource-variable/inter@5.2.6': {}
+
+  '@fontsource-variable/jetbrains-mono@5.2.6': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
