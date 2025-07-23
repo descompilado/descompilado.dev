@@ -1,0 +1,34 @@
+---
+import "@/styles/global.css";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<BaseLayout>
+    <main class="min-h-screen bg-background flex flex-col">
+        <Header onlyLogo />
+
+        <div class="flex-1 flex flex-col justify-center items-center my-20">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">404</h1>
+                <p class="text-xl text-muted-foreground mb-4">
+                    Oops! Algo deu errado
+                </p>
+                <p class="text-xl text-muted-foreground mb-4">
+                    Por favor entre em contato com o time da Descompilado
+                </p>
+                <a
+                    href="/"
+                    class="text-primary hover:text-primary-glow underline transition-colors"
+                >
+                    Voltar ao início
+                </a>
+            </div>
+        </div>
+
+        <Footer />
+    </main>
+</BaseLayout>

@@ -3,18 +3,17 @@ import { Image } from "astro:assets";
 
 import techBlackbox from "@/assets/tech-blackbox.png";
 
-const youKnowHowThisWork = `git add .
+const youKnowHowThisWork = `// Você entende como isso funciona?
+git add .
 git commit -m "feat: add new feature"
-git push origin main
-
-// Você entende como isso funciona?`;
+git push origin main`;
 ---
 
 <section id="filosofia" class="py-24 bg-background">
     <div class="w-full max-w-[1400px] mx-auto px-6">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">
-                O Verdadeiro <span class="gradient-text">Domínio</span> Vem da Construção
+                O Verdadeiro <span class="gradient-text">Domínio</span> Vem da Prática
             </h2>
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -43,43 +42,34 @@ git push origin main
                 <div class="space-y-6">
                     <div class="space-y-4">
                         <h3 class="text-2xl font-semibold text-foreground">
-                            Da Teoria à Maestria
+                            Da Teoria à Proficiência
                         </h3>
                         <p
                             class="text-lg text-muted-foreground leading-relaxed"
                         >
                             Você usa protocolos, bancos de dados e parsers todos
-                            os dias. Mas você <strong class="text-foreground"
-                                >realmente entende</strong
-                            > como eles funcionam?
+                            os dias. Mas você
+                            <strong class="text-foreground">realmente entende</strong>
+                            como eles funcionam?
                         </p>
                         <p
                             class="text-lg text-muted-foreground leading-relaxed"
                         >
-                            Na Descompilado, você não apenas lê a teoria. Você
-                            vai <strong class="text-primary"
-                                >programar e recriar</strong
-                            > tecnologias essenciais, passo a passo, solidificando
-                            seu conhecimento e tornando-se um engenheiro mais eficaz.
+                            Na Descompilado, você não aprende apenas a teoria. Você
+                            vai <strong class="text-primary">programar e recriar</strong>
+                            tecnologias essenciais, passo a passo, solidificando
+                            seu conhecimento e tornando-se um desenvolvedor mais completo.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-6 pt-8">
+                    <div class="flex flex-col items-center pt-8">
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-primary mb-2">
+                            <p class="text-5xl font-bold text-primary mb-2">
                                 100%
-                            </div>
-                            <div class="text-sm text-muted-foreground">
-                                Hands-on
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-primary mb-2">
-                                0%
-                            </div>
-                            <div class="text-sm text-muted-foreground">
-                                Teoria vazia
-                            </div>
+                            </p>
+                            <p class="text-sm text-muted-foreground">
+                                Mão na massa
+                            </p>
                         </div>
                     </div>
                 </div>

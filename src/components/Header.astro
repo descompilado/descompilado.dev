@@ -1,6 +1,12 @@
 ---
 import { Code2 } from "lucide-react";
 import GoToJoinWaitlist from "./GoToJoinWaitlist.astro";
+
+interface Props {
+    onlyLogo?: boolean;
+}
+
+const { onlyLogo } = Astro.props;
 ---
 
 <header
@@ -9,38 +15,51 @@ import GoToJoinWaitlist from "./GoToJoinWaitlist.astro";
     <nav
         class="w-full max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between"
     >
-        <div class="flex items-center gap-2">
-            <div
-                class="w-8 h-8 bg-gradient-primary rounded-md flex items-center justify-center glow-effect"
-            >
-                <Code2 className="w-5 h-5 text-white" />
+        <a href="/">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-gradient-primary rounded-md flex items-center justify-center glow-effect"
+                >
+                    <Code2 className="w-5 h-5 text-white" />
+                </div>
+                <span class="text-xl font-bold text-foreground"
+                    >Descompilado</span
+                >
             </div>
-            <span class="text-xl font-bold text-foreground">Descompilado</span>
-        </div>
+        </a>
+        {
+            !onlyLogo && (
+                <>
+                    <div class="hidden md:flex items-center gap-8">
+                        <a
+                            href="#filosofia"
+                            class="text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            Por que Construir?
+                        </a>
+                        <a
+                            href="#como-funciona"
+                            class="text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            Como Funciona
+                        </a>
+                        <a
+                            href="#faq"
+                            class="text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            FAQ
+                        </a>
+                    </div>
 
-        <div class="hidden md:flex items-center gap-8">
-            <a
-                href="#filosofia"
-                class="text-muted-foreground hover:text-foreground transition-colors"
-            >
-                Por que Construir?
-            </a>
-            <a
-                href="#como-funciona"
-                class="text-muted-foreground hover:text-foreground transition-colors"
-            >
-                Como Funciona
-            </a>
-            <a
-                href="#faq"
-                class="text-muted-foreground hover:text-foreground transition-colors"
-            >
-                FAQ
-            </a>
-        </div>
-
-        <div class="hidden xm:flex">
-            <GoToJoinWaitlist position="header" size="sm" showIcon={false} />
-        </div>
+                    <div class="hidden xm:flex">
+                        <GoToJoinWaitlist
+                            position="header"
+                            size="sm"
+                            showIcon={false}
+                        />
+                    </div>
+                </>
+            )
+        }
     </nav>
 </header>
