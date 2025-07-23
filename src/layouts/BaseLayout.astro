@@ -1,5 +1,8 @@
 ---
+import SpeedInsights from "@vercel/speed-insights/astro";
+
 import { Toaster } from "@/components/ui/sonner";
+
 import "../styles/global.css";
 ---
 
@@ -46,6 +49,7 @@ import "../styles/global.css";
 		<div>
 			<slot />
 			<Toaster client:idle />
+			<SpeedInsights client:load />
 		</div>
 	</body>
 </html>
