@@ -29,4 +29,8 @@ export default defineConfig({
   adapter: vercel({
     imageService: true
   }),
+
+  build: {
+    inlineStylesheets: "always"
+  }
 });
