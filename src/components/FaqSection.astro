@@ -1,0 +1,49 @@
+---
+import FaqAccordion from "./FaqAccordion";
+
+const faqs = [
+    {
+        question: "Preciso ter experiência avançada para participar?",
+        answer: "Não! Os desafios são projetados para diferentes níveis. Você precisa saber programar básico, mas não precisa ser um expert. O objetivo é justamente te levar do intermediário ao avançado.",
+    },
+    {
+        question: "Em quais linguagens os desafios são apresentados?",
+        answer: "Focamos principalmente em Python, JavaScript/TypeScript e Go. Mas os conceitos são universais - você pode implementar na linguagem que preferir.",
+    },
+    {
+        question: "Quanto tempo leva para completar um desafio?",
+        answer: "Varia de acordo com sua disponibilidade. Em média, cada desafio leva de 2-4 semanas dedicando algumas horas por semana. Você vai no seu ritmo.",
+    },
+    {
+        question: "Recebo certificado ou reconhecimento?",
+        answer: "Sim! Ao completar cada desafio, você recebe um certificado digital e pode adicionar o projeto ao seu portfólio no GitHub com nossa badge oficial.",
+    },
+    {
+        question: "Posso fazer os desafios em equipe?",
+        answer: "Incentivamos! Teremos fóruns de discussão e você pode formar grupos de estudo. Aprender em comunidade acelera o processo.",
+    },
+    {
+        question: "Qual é o investimento?",
+        answer: "Ainda estamos definindo o modelo de preços. Quem entrar na lista de espera terá acesso antecipado com desconto especial.",
+    },
+];
+---
+
+<section id="faq" class="py-24 bg-card/30">
+    <div class="w-full mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2
+                class="text-3xl md:text-5xl font-bold text-center mb-4 animate-fade-in"
+            >
+                Perguntas <span class="gradient-text">Frequentes</span>
+            </h2>
+            <p
+                class="text-xl text-muted-foreground text-center mb-16 animate-slide-up"
+            >
+                Esclarecemos as principais dúvidas sobre a plataforma
+            </p>
+
+            <FaqAccordion faqs={faqs} client:idle />
+        </div>
+    </div>
+</section>

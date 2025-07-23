@@ -1,0 +1,89 @@
+---
+import { Puzzle, Terminal, Brain } from "lucide-react";
+
+const steps = [
+    {
+        icon: Puzzle,
+        title: "Escolha um Desafio",
+        description:
+            "Selecione uma tecnologia fundamental que você usa mas não entende completamente.",
+    },
+    {
+        icon: Terminal,
+        title: "Construa do Zero",
+        description:
+            "Siga nossos guias práticos e implemente cada componente linha por linha.",
+    },
+    {
+        icon: Brain,
+        title: "Domine os Fundamentos",
+        description:
+            "Compreenda profundamente como sistemas complexos funcionam por dentro.",
+    },
+];
+---
+
+<section id="como-funciona" class="py-24 bg-card/30">
+    <div class="w-full max-w-[1400px] mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2
+                class="text-3xl md:text-5xl font-bold text-center mb-4 animate-fade-in"
+            >
+                Sua Jornada para a <span class="gradient-text">Maestria</span>
+            </h2>
+            <p
+                class="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto animate-slide-up"
+            >
+                Um processo simples e estruturado para transformar você em um
+                engenheiro de software completo
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                {
+                    steps.map((step, index) => {
+                        const Icon = step.icon;
+                        return (
+                            <div
+                                class="relative group animate-scale-in"
+                                style={{ animationDelay: `${index * 0.2}s` }}
+                            >
+                                {index < steps.length - 1 && (
+                                    <div class="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent transform translate-x-8 z-0" />
+                                )}
+
+                                <div class="relative bg-card border border-border rounded-2xl p-8 text-center hover:shadow-card transition-all duration-300 group-hover:border-primary/50 z-10">
+                                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                                        {index + 1}
+                                    </div>
+
+                                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                                        <Icon className="w-8 h-8 text-primary" />
+                                    </div>
+
+                                    <h3 class="text-xl font-semibold mb-4">
+                                        {step.title}
+                                    </h3>
+                                    <p class="text-muted-foreground leading-relaxed">
+                                        {step.description}
+                                    </p>
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+            </div>
+
+            <div class="text-center mt-16">
+                <div
+                    class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3"
+                >
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"
+                    ></span>
+                    <span class="text-sm text-primary font-medium">
+                        Primeiros desafios chegando em breve
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

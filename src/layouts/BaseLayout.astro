@@ -1,0 +1,51 @@
+---
+import { Toaster } from "@/components/ui/sonner";
+import "../styles/global.css";
+---
+
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Descompilado | Aprenda Engenharia de Software Construindo na Prática
+		</title>
+		<meta
+			name="description"
+			content="Vá além de usar ferramentas. Na Descompilado, você aprende a construir sistemas de baixo nível do zero e se torna um engenheiro de software mais completo."
+		/>
+		<meta name="author" content="Descompilado" />
+		<meta
+			name="keywords"
+			content="engenharia de software, programação, desenvolvimento, sistemas, redis, git, aprender programando"
+		/>
+
+		<meta
+			property="og:title"
+			content="Descompilado | Aprenda Engenharia de Software Construindo na Prática"
+		/>
+		<meta
+			property="og:description"
+			content="Vá além de usar ferramentas. Na Descompilado, você aprende a construir sistemas de baixo nível do zero e se torna um engenheiro de software mais completo."
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://descompilado.dev" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Descompilado | Aprenda Engenharia de Software Construindo na Prática"
+		/>
+		<meta
+			name="twitter:description"
+			content="Vá além de usar ferramentas. Na Descompilado, você aprende a construir sistemas de baixo nível do zero e se torna um engenheiro de software mais completo."
+		/>
+	</head>
+
+	<body class="bg-background text-foreground font-sans">
+		<div>
+			<slot />
+			<Toaster client:load />
+		</div>
+	</body>
+</html>

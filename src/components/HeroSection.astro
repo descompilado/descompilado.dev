@@ -1,0 +1,54 @@
+---
+import { Code2 } from "lucide-react";
+import GoToJoinWaitlist from "./GoToJoinWaitlist.astro";
+---
+
+<section
+    class="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden"
+>
+    <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--primary-glow)_0%,_transparent_50%)] opacity-20"
+    >
+    </div>
+
+    <div
+        class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px]"
+    >
+    </div>
+
+    <div class="w-full max-w-[1400px] mx-auto px-6 relative z-10">
+        <div class="text-center max-w-4xl mx-auto animate-fade-in">
+            <div
+                class="inline-flex items-center gap-2 bg-card/50 border border-border rounded-full px-4 py-2 mb-8 backdrop-blur-sm"
+            >
+                <Code2 className="w-4 h-4 text-primary" />
+                <span class="text-sm text-muted-foreground"
+                    >Aprenda construindo na prática</span
+                >
+            </div>
+
+            <h1
+                class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            >
+                Já pensou em construir{" "}
+                <span class="gradient-text">seu próprio Redis?</span>{" "}
+                Ou{" "}
+                <span class="gradient-text">seu próprio Git?</span>
+            </h1>
+
+            <p
+                class="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
+                Deixe de ser um mero usuário de ferramentas e torne-se o
+                engenheiro que as entende profundamente. Aprenda construindo e
+                domine os fundamentos do software.
+            </p>
+
+            <GoToJoinWaitlist/>
+
+            <p class="text-sm text-muted-foreground mt-8">
+                Junte-se aos desenvolvedores que querem ir além do básico
+            </p>
+        </div>
+    </div>
+</section>

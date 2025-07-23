@@ -1,0 +1,24 @@
+---
+import { ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
+---
+
+<Button
+    id="go-to-join-waitlist"
+    size="lg"
+    className="text-lg px-8! py-6 shadow-glow! hover:shadow-glow! transition-all duration-300 group cursor-pointer"
+>
+    Entrar na lista de espera
+    <ArrowRight
+        className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+    />
+</Button>
+
+<script>
+    const joinWaitlist = document.getElementById("waitlist");
+    const goToJoinWaitlist = document.getElementById("go-to-join-waitlist");
+
+    goToJoinWaitlist?.addEventListener("click", () =>
+        joinWaitlist?.scrollIntoView({ behavior: "smooth" }),
+    );
+</script>

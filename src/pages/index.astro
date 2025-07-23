@@ -1,0 +1,26 @@
+---
+import "@/styles/global.css";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import Header from "@/components/Header.astro";
+import HeroSection from "@/components/HeroSection.astro";
+import PhilosophySection from "@/components/PhilosophySection.astro";
+import HowItWorksSection from "@/components/HowItWorksSection.astro";
+import FaqSection from "@/components/FaqSection.astro";
+import WaitlistSection from "@/components/WaitlistSection";
+import Footer from "@/components/Footer.astro";
+
+---
+
+<BaseLayout title="Descompilou">
+	<main class="min-h-screen bg-background">
+		<Header />
+		<HeroSection />
+		<PhilosophySection/>
+		<HowItWorksSection/>
+		<FaqSection />
+		<WaitlistSection client:load/>
+		<Footer/>
+	</main>
+</BaseLayout>
