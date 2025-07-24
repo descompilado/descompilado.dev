@@ -2,9 +2,11 @@
 import { actions } from "astro:actions";
 import WaitlistTitleFallback from "./WaitlistTitleFallback.astro";
 
-Astro.response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate');
-Astro.response.headers.set('Vercel-CDN-Cache-Control', 'max-age=60');
-Astro.response.headers.set('CDN-Cache-Control', 'max-age=60');
+const cacheInSeconds = 5 * 60;
+
+Astro.response.headers.set('Cache-Control', `s-maxage=${cacheInSeconds}, stale-while-revalidate`);
+Astro.response.headers.set('Vercel-CDN-Cache-Control', `max-age=${cacheInSeconds}`);
+Astro.response.headers.set('CDN-Cache-Control', `max-age=${cacheInSeconds}`);
 
 const { data: count = 0 } = await Astro.callAction(actions.waitlist.count, {});
 
