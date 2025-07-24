@@ -1,19 +1,40 @@
 ---
-const gaMeasurementId = "G-J4YEXR7E7L";
+import { GA_MEASUREMENT_ID } from "astro:env/client";
 ---
 
 <script
     is:inline
     async
     type="text/partytown"
-    src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+    src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+></script>
 
-<script is:inline type="text/partytown" define:vars={{ gaMeasurementId }}>
+<script
+    is:inline
+    type="text/partytown"
+    define:vars={{ gaMeasurementId: GA_MEASUREMENT_ID }}
+>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
+    window.gtag = function gtag() {
         dataLayer.push(arguments);
     }
+    
     gtag("js", new Date());
 
-    gtag("config", gaMeasurementId);
+    gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+    });
+
+    gtag("config", gaMeasurementId, {
+        page_path: window.location.pathname,
+    });
+
+    document.addEventListener("astro:after-swap", () => {
+        gtag("config", gaMeasurementId, {
+            page_path: window.location.pathname,
+        });
+    });
 </script>

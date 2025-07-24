@@ -40,14 +40,14 @@ const { position, size = "lg", showIcon = true } = Astro.props;
 </a>
 
 <script>
-    import { track } from "@vercel/analytics";
+    import { EVENTS } from "@/lib/analytics";
 
     document
         .querySelectorAll<HTMLElement>("[data-go-to-wailist-position]")
         .forEach((goToWaitlist) => {
             goToWaitlist.addEventListener("click", () =>
-                track("GoToWaitlist", {
-                    position: goToWaitlist.dataset.goToWailistPosition ?? null,
+                EVENTS.gotToWaitlistRegister({
+                    position: goToWaitlist.dataset.goToWailistPosition ?? "",
                 }),
             );
         });

@@ -38,10 +38,12 @@
     "resend": "^4.7.0",
     "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.3"
+    "tailwindcss": "^4.1.3",
+    "vanilla-cookieconsent": "3.1.0"
   },
   "devDependencies": {
     "@react-email/preview-server": "^4.2.4",
+    "@types/gtag.js": "^0.0.20",
     "react-email": "^4.2.4",
     "tw-animate-css": "^1.3.5"
   }

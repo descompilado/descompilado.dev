@@ -15,11 +15,12 @@ export default defineConfig({
   env: {
     schema: {
       RESEND_API_KEY: envField.string({ context: "server", access: "secret" }),
-      RESEND_AUDIENCE_ID: envField.string({ context: "server", access: "public" })
+      RESEND_AUDIENCE_ID: envField.string({ context: "server", access: "public" }),
+      GA_MEASUREMENT_ID: envField.string({ context: "client", access: "public"})
     }
   },
 
-  integrations: [react(), sitemap(), partytown({ config: { forward: ['dataLayer.push'] } })],
+  integrations: [react(), sitemap(), partytown({ config: { forward: ['dataLayer.push', 'gtag'] } })],
 
   vite: {
     plugins: [tailwindcss()]

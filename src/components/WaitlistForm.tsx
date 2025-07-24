@@ -11,6 +11,7 @@ import confetti from 'canvas-confetti';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Check, Loader2, Mail } from "lucide-react";
+import { EVENTS } from "@/lib/analytics";
 
 export default function WishlistSection() {
     const [email, setEmail] = useState("");
@@ -54,6 +55,8 @@ export default function WishlistSection() {
             })
 
             confetti()
+
+            EVENTS.waitlistRegister({ email })
         }
 
         setIsLoading(false)
