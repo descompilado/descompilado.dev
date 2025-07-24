@@ -19,7 +19,7 @@ const WelcomeWaitlist = () => {
   return (
     <Html lang="pt-BR" dir="ltr">
       <Head />
-      <Preview>Obrigado por se juntar à lista de espera do Descompilado!</Preview>
+      <Preview>Obrigado por se juntar ao programa de Preview do Descompilado!</Preview>
       <Tailwind config={{
         presets: [pixelBasedPreset],
         theme: {
@@ -55,7 +55,7 @@ const WelcomeWaitlist = () => {
                 </Text>
 
                 <Text className="text-foreground text-lg leading-6 mb-5">
-                  Obrigado por se juntar à nossa lista de espera! Estamos empolgados em ter você conosco nesta jornada de aprendizado profundo em engenharia de software.
+                  Obrigado por se juntar ao nosso programa de preview! Estamos empolgados em ter você conosco nesta jornada de aprendizado profundo em engenharia de software.
                 </Text>
 
                 <Text className="text-foreground text-lg leading-6 mb-5">
