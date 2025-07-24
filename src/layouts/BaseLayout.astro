@@ -1,5 +1,6 @@
 ---
 import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from "@vercel/analytics/astro";
 
 import { Toaster } from "@/components/ui/sonner";
 
@@ -11,7 +12,7 @@ import "../styles/global.css";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		
+
 		<title>
 			Descompilado | Aprenda Engenharia de Software Construindo na Prática
 		</title>
@@ -52,6 +53,7 @@ import "../styles/global.css";
 			<slot />
 			<Toaster client:idle />
 			<SpeedInsights />
+			<Analytics />
 		</div>
 	</body>
 </html>

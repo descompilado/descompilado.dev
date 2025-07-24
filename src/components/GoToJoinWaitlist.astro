@@ -20,6 +20,7 @@ const { position, size = "lg", showIcon = true } = Astro.props;
 
 <a
     id={`${position}-junte-se-a-lista-de-espera`}
+    data-go-to-wailist-position={position}
     href="#waitlist"
     class={cn(
         buttonVariants({
@@ -37,3 +38,17 @@ const { position, size = "lg", showIcon = true } = Astro.props;
         )
     }
 </a>
+
+<script>
+    import { track } from "@vercel/analytics";
+
+    document
+        .querySelectorAll<HTMLElement>("[data-go-to-wailist-position]")
+        .forEach((goToWaitlist) => {
+            goToWaitlist.addEventListener("click", () =>
+                track("GoToWaitlist", {
+                    position: goToWaitlist.dataset.goToWailistPosition ?? null,
+                }),
+            );
+        });
+</script>
