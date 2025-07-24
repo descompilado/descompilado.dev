@@ -21,12 +21,12 @@ import { GA_MEASUREMENT_ID } from "astro:env/client";
     
     gtag("js", new Date());
 
-    gtag("consent", "default", {
-        ad_storage: "denied",
-        ad_user_data: "denied",
-        ad_personalization: "denied",
-        analytics_storage: "denied",
-    });
+    // gtag("consent", "default", {
+    //     ad_storage: "denied",
+    //     ad_user_data: "denied",
+    //     ad_personalization: "denied",
+    //     analytics_storage: "denied",
+    // });
 
     gtag("config", gaMeasurementId, {
         page_path: window.location.pathname,

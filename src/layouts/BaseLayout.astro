@@ -1,12 +1,12 @@
 ---
+import "../styles/global.css";
+
 import SpeedInsights from "@vercel/speed-insights/astro";
-import Analytics from "@vercel/analytics/astro";
 
 import { Toaster } from "@/components/ui/sonner";
 
-import "../styles/global.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
-import CookieConsent from "@/components/CookieConsent.astro";
+// import CookieConsent from "@/components/CookieConsent.astro";
 ---
 
 <html lang="pt-BR" class="scroll-smooth">
@@ -57,7 +57,7 @@ import CookieConsent from "@/components/CookieConsent.astro";
 			<Toaster client:idle />
 			<SpeedInsights />
 
-			<CookieConsent />
+			<!-- <CookieConsent /> -->
 		</div>
 	</body>
 </html>
