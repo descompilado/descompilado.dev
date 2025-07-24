@@ -5,6 +5,7 @@ import Analytics from "@vercel/analytics/astro";
 import { Toaster } from "@/components/ui/sonner";
 
 import "../styles/global.css";
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 ---
 
 <html lang="pt-BR" class="scroll-smooth">
@@ -12,7 +13,6 @@ import "../styles/global.css";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
 		<title>
 			Descompilado | Aprenda Engenharia de Software Construindo na Prática
 		</title>
@@ -46,6 +46,8 @@ import "../styles/global.css";
 			name="twitter:description"
 			content="Vá além de usar ferramentas. Na Descompilado, você aprende a construir sistemas de baixo nível do zero e se torna um engenheiro de software mais completo."
 		/>
+
+		<GoogleAnalytics/>
 	</head>
 
 	<body class="bg-background text-foreground font-sans">
@@ -53,7 +55,6 @@ import "../styles/global.css";
 			<slot />
 			<Toaster client:idle />
 			<SpeedInsights />
-			<Analytics />
 		</div>
 	</body>
 </html>

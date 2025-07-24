@@ -7,6 +7,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 import vercel from '@astrojs/vercel/serverless';
 
+import partytown from "@astrojs/partytown";
+
 export default defineConfig({
   site: 'https://descompilado.dev/',
 
@@ -17,10 +19,7 @@ export default defineConfig({
     }
   },
 
-  integrations: [
-    react(),
-    sitemap()
-  ],
+  integrations: [react(), sitemap(), partytown({ config: { forward: ['dataLayer.push'] } })],
 
   vite: {
     plugins: [tailwindcss()]

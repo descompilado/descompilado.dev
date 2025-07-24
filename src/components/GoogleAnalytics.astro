@@ -1,0 +1,19 @@
+---
+const gaMeasurementId = "G-J4YEXR7E7L";
+---
+
+<script
+    is:inline
+    async
+    type="text/partytown"
+    src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+
+<script is:inline type="text/partytown" define:vars={{ gaMeasurementId }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", gaMeasurementId);
+</script>
