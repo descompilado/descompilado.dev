@@ -44,9 +44,9 @@ export const waitlist = {
                 }
 
                 const { error: sendEmailError } = await resend.emails.send({
-                    from: 'Descompilando <contato@descompilado.dev>',
+                    from: 'Contato Descompilado <contato@descompilado.dev>',
                     to: [email],
-                    subject: 'Bem Vindo ao Descompilando!',
+                    subject: 'Bem Vindo a Descompilado!',
                     react: <WelcomeWaitlist />,
                 });
 
