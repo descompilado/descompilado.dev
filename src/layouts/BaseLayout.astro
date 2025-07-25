@@ -6,7 +6,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 import { Toaster } from "@/components/ui/sonner";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
-// import CookieConsent from "@/components/CookieConsent.astro";
+import CookieConsent from "@/components/CookieConsent.astro";
 ---
 
 <html lang="pt-BR" class="scroll-smooth">
@@ -57,7 +57,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 			<Toaster client:idle />
 			<SpeedInsights />
 
-			<!-- <CookieConsent /> -->
+			<CookieConsent />
 		</div>
 	</body>
 </html>
