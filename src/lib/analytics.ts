@@ -1,4 +1,3 @@
-
 declare global {
     interface Window {
         dataLayer: Record<string, any>[];
@@ -14,6 +13,13 @@ export const event = ({ action, ...eventParams }: EventType) => {
     if (!window.gtag) return;
 
     window.gtag("event", action, eventParams);
+};
+
+export const pageview = (url?: string) => {
+    event({
+        action: "page_view",
+        page_path: url ?? window.location.pathname
+    });
 };
 
 export const EVENTS = {

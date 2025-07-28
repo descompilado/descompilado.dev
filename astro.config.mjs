@@ -7,8 +7,6 @@ import tailwindcss from '@tailwindcss/vite';
 
 import vercel from '@astrojs/vercel/serverless';
 
-import partytown from "@astrojs/partytown";
-
 export default defineConfig({
   site: 'https://descompilado.dev/',
 
@@ -16,18 +14,21 @@ export default defineConfig({
     schema: {
       RESEND_API_KEY: envField.string({ context: "server", access: "secret" }),
       RESEND_AUDIENCE_ID: envField.string({ context: "server", access: "public" }),
-      GA_MEASUREMENT_ID: envField.string({ context: "client", access: "public"})
+      GA_MEASUREMENT_ID: envField.string({ context: "client", access: "public" })
     }
   },
 
-  integrations: [react(), sitemap(), partytown({ config: { forward: ['dataLayer.push', 'gtag'] } })],
+  integrations: [
+    react(),
+    sitemap()
+  ],
 
   vite: {
     plugins: [tailwindcss()]
   },
 
   output: 'server',
-  
+
   adapter: vercel({
     imageService: true
   }),

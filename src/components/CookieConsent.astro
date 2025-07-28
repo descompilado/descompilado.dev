@@ -5,7 +5,11 @@ import "vanilla-cookieconsent/dist/cookieconsent.css";
 <script>
     import * as CookieConsent from "vanilla-cookieconsent";
 
+    import { pageview } from "@/lib/analytics";
+
     document.documentElement.classList.add("cc--darkmode");
+
+    const SERVICE_ANALYTICS_STORAGE = "analytics_storage";
 
     CookieConsent.run({
         guiOptions: {
@@ -14,7 +18,23 @@ import "vanilla-cookieconsent/dist/cookieconsent.css";
         },
         categories: {
             necessary: { readOnly: true },
-            analytics: {},
+            analytics: {
+                autoClear: {
+                    cookies: [
+                        {
+                            name: /^_ga/,
+                        },
+                        {
+                            name: "_gid",
+                        },
+                    ],
+                },
+                services: {
+                    [SERVICE_ANALYTICS_STORAGE]: {
+                        label: "Permite o armazenamento (como cookies) relacionado a análises, por exemplo, duração da visita.",
+                    },
+                },
+            },
         },
         language: {
             default: "pt",
@@ -51,6 +71,30 @@ import "vanilla-cookieconsent/dist/cookieconsent.css";
                                 description:
                                     "Estes cookies nos ajudam a entender como você usa nosso site, coletando informações de forma anônima para melhorar nossos serviços.",
                                 linkedCategory: "analytics",
+                                cookieTable: {
+                                    headers: {
+                                        name: "Nome",
+                                        domain: "Serviço",
+                                        description: "Descrição",
+                                        expiration: "Expiração",
+                                    },
+                                    body: [
+                                        {
+                                            name: "_ga",
+                                            domain: "Google Analytics",
+                                            description:
+                                                'Cookie enviado pelo <a href="https://business.safety.google/adscookies/">Google Analytics</a>',
+                                            expiration: "Expira depois de 12 dias",
+                                        },
+                                        {
+                                            name: "_gid",
+                                            domain: "Google Analytics",
+                                            description:
+                                                'Cookie enviado pelo <a href="https://business.safety.google/adscookies/">Google Analytics</a>',
+                                            expiration: "Sessão",
+                                        },
+                                    ],
+                                },
                             },
                             {
                                 title: "Mais informações",
@@ -62,12 +106,13 @@ import "vanilla-cookieconsent/dist/cookieconsent.css";
                 },
             },
         },
-
         onConsent: function () {
             if (CookieConsent.acceptedCategory("analytics")) {
                 window.gtag("consent", "update", {
                     analytics_storage: "granted",
                 });
+
+                pageview();
             }
         },
     });

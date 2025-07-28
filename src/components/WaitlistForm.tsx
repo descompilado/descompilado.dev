@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Check, Loader2, Mail } from "lucide-react";
 import { EVENTS } from "@/lib/analytics";
 
-export default function WishlistSection() {
+export default function WaitlistForm() {
     const [email, setEmail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
